@@ -1,4 +1,4 @@
-function sysCall_init() 
+function sysCall_init()
     counter=0
     previousCounter=-1
     previousDetectionState=0
@@ -17,11 +17,11 @@ function sysCall_init()
     lastDetection=-10
 end
 
-function sysCall_cleanup() 
- 
-end 
+function sysCall_cleanup()
 
-function sysCall_sensing() 
+end
+
+function sysCall_sensing()
     st=sim.getSimulationTime()
     detectionState=sim.readProximitySensor(sensorHandle)
     if (detectionState==1) then
@@ -31,7 +31,7 @@ function sysCall_sensing()
         lastDetection=st
     end
     previousDetectionState=detectionState
-    
+
     if (previousCounter~=counter) then
         c=math.fmod(counter,1000)
         for i=0,2,1 do
@@ -131,4 +131,4 @@ function sysCall_sensing()
         end
     end
     previousCounter=counter
-end 
+end
