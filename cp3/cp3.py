@@ -177,11 +177,11 @@ def main():
 	get_joint_handles() # populates the global joint handle variables
 
 	# Destination angles
-	Goal_joint_angles = np.array([[0,0,-0.5*np.pi,0.5*np.pi,-0.5*np.pi,-0.5*np.pi], \
+	Destination_joint_angles = np.array([[0,0,-0.5*np.pi,0.5*np.pi,-0.5*np.pi,-0.5*np.pi], \
 								[0.5*np.pi,0,-0.5*np.pi,0.5*np.pi,0.5*np.pi,-0.5*np.pi],\
 								[-0.5*np.pi,-0.5*np.pi,-0.5*np.pi,0,-0.5*np.pi,-0.5*np.pi]])
 
-	for joint_angles in Goal_joint_angles:
+	for joint_angles in Destination_joint_angles:
 		SetJointPosition(joint_angles)
 
 	time.sleep(2)

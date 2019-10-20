@@ -18,7 +18,7 @@ At first, navigating V-REP was difficult because of the GUI and lack of quality 
 Based on the information we gathered during this checkpoint, our project still seems feasible. We will need to fix our remote API access for faster prototyping and debugging. We will also need to start thinking of, and reading research papers on, methods for designing our reinforcement learning algorithm to teach our robot how to pick stuff up.
 
 ### Checkpoint 3
-Video:  [Checkpoint 3]()
+Video:  [Checkpoint 3](https://youtu.be/MoAWaUwMhmc)
 
 To run the code in this checkpoint open V-REP and load in the ur3.ttt scene in cp3. Make sure V-REP can accept incoming connections and then type the following command in the terminal in project/cp3/
 ```
@@ -29,4 +29,4 @@ The code takes our UR-3 to angles listed in the Goal_joint_angles variable in th
 
 We also looked into some research projects such as [Visual Pushing and Grasping](https://github.com/andyzeng/visual-pushing-grasping) by Andy Zeng to learn common practices, setup, and look for information. We derived inspiration to do that from the video [This Robot Learned To Clean Up Clutter](https://www.youtube.com/watch?v=txHQoYKaSUk)
 
-We hope to get inverse kinematics and basic camera sensing working for the next checkpoint. 
+We hope to get inverse kinematics and basic camera sensing working for the next checkpoint.
