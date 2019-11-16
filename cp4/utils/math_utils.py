@@ -1,5 +1,5 @@
 import numpy as np
-from math import cos, sin
+from numpy import cos, sin
 from scipy.linalg import expm,logm
 
 # returns the skew matrix of a 3x1 vector

@@ -54,8 +54,8 @@ def get_end_effector_handle(clientID):
 
 ####################### Functions to read UR3 metadata #######################
 # Function used to move joints to desired angle theta
-def SetJointPosition(theta, clientID, listHandles):
-	[base_handle, joint_one_handle, joint_two_handle, joint_three_handle, joint_four_handle, joint_five_handle, joint_six_handle] = listHandles
+def set_joint_position(theta, clientID, jointHandles):
+	[base_handle, joint_one_handle, joint_two_handle, joint_three_handle, joint_four_handle, joint_five_handle, joint_six_handle] = jointHandles
 
 	vrep.simxSetJointTargetPosition(clientID, joint_one_handle, theta[0], vrep.simx_opmode_oneshot)
 	time.sleep(timeBetweenJointMovements)
@@ -71,8 +71,8 @@ def SetJointPosition(theta, clientID, listHandles):
 	time.sleep(timeBetweenJointMovements)
 
 # Returns distances measurements from each joint center to base frame (useful for forward kinematics)
-def get_joint(clientID, listHandles):
-	[base_handle, joint_one_handle, joint_two_handle, joint_three_handle, joint_four_handle, joint_five_handle, joint_six_handle] = listHandles
+def get_joint(clientID, jointHandles):
+	[base_handle, joint_one_handle, joint_two_handle, joint_three_handle, joint_four_handle, joint_five_handle, joint_six_handle] = jointHandles
 
 	X = []
 	Y = []
@@ -111,8 +111,8 @@ def get_joint(clientID, listHandles):
 	return X,Y,Z
 
 # Returns list of current joint angles of UR3
-def GetJointAngle(clientID, listHandles):
-	[base_handle, joint_one_handle, joint_two_handle, joint_three_handle, joint_four_handle, joint_five_handle, joint_six_handle] = listHandles
+def get_joint_angle(clientID, jointHandles):
+	[base_handle, joint_one_handle, joint_two_handle, joint_three_handle, joint_four_handle, joint_five_handle, joint_six_handle] = jointHandles
 
 	result, theta1 = vrep.simxGetJointPosition(clientID, joint_one_handle, vrep.simx_opmode_blocking)
 	if result != vrep.simx_return_ok:

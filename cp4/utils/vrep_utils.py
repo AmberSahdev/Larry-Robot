@@ -10,7 +10,7 @@ def start_simulation():
 	if clientID == -1:
 		raise Exception('Failed connecting to remote API server')
 
-	print("Starting simulation with clientID: ", clientID)
+	print("> Starting simulation with clientID: ", clientID)
 	vrep.simxStartSimulation(clientID, vrep.simx_opmode_oneshot)
 	return clientID
 
