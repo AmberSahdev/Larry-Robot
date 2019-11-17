@@ -1,5 +1,6 @@
 import vrep
 import time
+import numpy as np
 
 timeBetweenJointMovements = 0.2
 
@@ -71,7 +72,7 @@ def set_joint_position(theta, clientID, jointHandles):
 	time.sleep(timeBetweenJointMovements)
 
 # Returns distances measurements from each joint center to base frame (useful for forward kinematics)
-def get_joint(clientID, jointHandles):
+def get_joint_distances(clientID, jointHandles):
 	[base_handle, joint_one_handle, joint_two_handle, joint_three_handle, joint_four_handle, joint_five_handle, joint_six_handle] = jointHandles
 
 	X = []
@@ -101,10 +102,14 @@ def get_joint(clientID, jointHandles):
 	X.append(vector[0])
 	Y.append(vector[1])
 	Z.append(vector[2])
+
+	# TODO: after adding end-effector functionality
+	"""
 	result,vector=vrep.simxGetObjectPosition(clientID, end_handle,base_handle,vrep.simx_opmode_blocking)
 	X.append(vector[0])
 	Y.append(vector[1])
 	Z.append(vector[2])
+	"""
 	X = np.round(X, decimals = 3)
 	Y = np.round(Y, decimals = 3)
 	Z = np.round(Z, decimals = 3)
@@ -134,3 +139,8 @@ def get_joint_angle(clientID, jointHandles):
 		raise Exception('could not get 6 joint variable')
 	thetas = np.array([[theta1],[theta2],[theta3],[theta4],[theta5],[theta6]])
 	return thetas
+
+########################## Helper Functions for UR3 ##########################
+# Sets the UR-3 to all zero angles/zero configuration
+def set_zero_config(clientID, jointHandles):
+    set_joint_position(np.array([0, 0, 0, 0, 0, 0]), clientID, jointHandles)
