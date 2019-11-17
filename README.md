@@ -42,4 +42,6 @@ The relevant remote API connection files are already in the cp4 directory.
 
 Our method calculates the M and S matrices of the robot and then the transformation matrix T of the desired end effector position to reach the object. Having these 3 parameters with an error bound, the algorithm from IKinSpace from HW 8's modern robotics library calculates whether or not this configuration is reachable and if it is then what angles satisfy the requirement.
 
+We also restructured our code into ur3_utils, vrep_utils, and math_utils to make interaction with the robot and the environment easier and much easier to collaborate on.  
+
 We hope to get perception and end-effector working by the next checkpoint.
