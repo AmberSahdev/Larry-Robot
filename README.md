@@ -30,3 +30,16 @@ The code takes our UR-3 to angles listed in the Goal_joint_angles variable in th
 We also looked into some research projects such as [Visual Pushing and Grasping](https://github.com/andyzeng/visual-pushing-grasping) by Andy Zeng to learn common practices, setup, and look for information. We derived inspiration to do that from the video [This Robot Learned To Clean Up Clutter](https://www.youtube.com/watch?v=txHQoYKaSUk)
 
 We hope to get inverse kinematics and basic camera sensing working for the next checkpoint.
+
+### Checkpoint 4
+Video:  [Checkpoint 3](https://youtu.be/nPya1e8HnMI)
+
+To run the code in this checkpoint open V-REP and load in the ur3.ttt scene in /cp4/. Make sure V-REP can accept incoming connections and then type the following command in the terminal in project/cp3/
+```
+python3 cp4.py
+```
+The relevant remote API connection files are already in the cp4 directory.
+
+Our method calculates the M and S matrices of the robot and then the transformation matrix T of the desired end effector position to reach the object. Having these 3 parameters with an error bound, the algorithm from IKinSpace from HW 8's modern robotics library calculates whether or not this configuration is reachable and if it is then what angles satisfy the requirement.
+
+We hope to get perception and end-effector working by the next checkpoint.
