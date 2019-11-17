@@ -32,7 +32,7 @@ We also looked into some research projects such as [Visual Pushing and Grasping]
 We hope to get inverse kinematics and basic camera sensing working for the next checkpoint.
 
 ### Checkpoint 4
-Video:  [Checkpoint 3](https://youtu.be/nPya1e8HnMI)
+Video:  [Checkpoint 4](https://youtu.be/nPya1e8HnMI)
 
 To run the code in this checkpoint open V-REP and load in the ur3.ttt scene in /cp4/. Make sure V-REP can accept incoming connections and then type the following command in the terminal in project/cp3/
 ```
