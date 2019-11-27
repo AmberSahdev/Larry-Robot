@@ -20,7 +20,7 @@ def main():
     time.sleep(2)
     print("> Set UR-3")
     ur3_utils.set_zero_config(clientID, jointHandles)
-    theta = np.array([0.001, 1.4, 0.001, 0.001, -PI/2, 0.001])
+    theta = np.array([0.001, 1.26, 0.2, 0.2, -PI/2, 0.001])
     ur3_utils.set_joint_position(theta, clientID, jointHandles)
     time.sleep(3)
 
@@ -28,7 +28,7 @@ def main():
     vrep.simxSetIntegerSignal(clientID, 'BaxterVacuumCup_active', 1, vrep.simx_opmode_oneshot)
 
     # move up
-    theta = np.array([0.001, 0.7, 0.001, 0.001, -PI/2, 0.001])
+    theta = np.array([0.001, -1.00, -0.4, -0.2, PI/2, 0.001])
     ur3_utils.set_joint_position(theta, clientID, jointHandles)
     time.sleep(2)
     vrep.simxSetIntegerSignal(clientID, 'BaxterVacuumCup_active', 0, vrep.simx_opmode_oneshot)
