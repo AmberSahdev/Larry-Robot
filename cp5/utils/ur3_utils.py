@@ -112,9 +112,9 @@ def get_joint_distances(clientID, jointHandles):
 	Y.append(vector[1])
 	Z.append(vector[2])
 	"""
-	X = np.round(X, decimals = 3)
-	Y = np.round(Y, decimals = 3)
-	Z = np.round(Z, decimals = 3)
+	X = np.round(X, decimals = 5)
+	Y = np.round(Y, decimals = 5)
+	Z = np.round(Z, decimals = 5)
 	return X,Y,Z
 
 # Returns list of current joint angles of UR3
