@@ -28,7 +28,7 @@ def main():
     vrep.simxSetIntegerSignal(clientID, 'BaxterVacuumCup_active', 1, vrep.simx_opmode_oneshot)
 
     # move up
-    theta = np.array([0.001, -1.00, -0.4, -0.2, PI/2, 0.001])
+    theta = np.array([-1.2, -1.00, -0.4, -0.2, PI/2, 0.001])
     ur3_utils.set_joint_position(theta, clientID, jointHandles)
     time.sleep(2)
     vrep.simxSetIntegerSignal(clientID, 'BaxterVacuumCup_active', 0, vrep.simx_opmode_oneshot)
