@@ -3,7 +3,7 @@ import time
 import numpy as np
 import modern_robotics as mr
 
-timeBetweenJointMovements = 0.15
+timeBetweenJointMovements = 0.3
 PI = np.pi
 
 ######################### Functions to initialize UR3 #########################
@@ -59,6 +59,15 @@ def get_end_effector_handle(clientID):
 # Function used to move joints to desired angle theta
 def set_joint_position(theta, clientID, jointHandles):
 	[base_handle, joint_one_handle, joint_two_handle, joint_three_handle, joint_four_handle, joint_five_handle, joint_six_handle] = jointHandles
+
+	'''
+	for jointHandle in jointHandles[1:]:
+		vrep.simxSetJointTargetVelocity(clientID, jointHandle, 0.01, vrep.simx_opmode_oneshot)
+	'''
+
+	for jointHandle in jointHandles[1:]:
+		vrep.simxSetJointForce(clientID, jointHandle, 27, vrep.simx_opmode_oneshot)
+
 
 	vrep.simxSetJointTargetPosition(clientID, joint_one_handle, theta[0], vrep.simx_opmode_oneshot)
 	time.sleep(timeBetweenJointMovements)
