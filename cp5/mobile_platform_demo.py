@@ -97,10 +97,10 @@ def main():
 
     ur3_utils.set_zero_config(clientID, jointHandles)
 
-    originalThetas = [0, 1.3, 0.6, 0, -PI/2, 0]
+    originalThetas = [0, 1.4, 0.45, 0, -PI/2, 0]
     ur3_utils.set_joint_position(originalThetas, clientID, jointHandles)
     suction(1, clientID)
-    destThetas = [0, -1.2, -0.7, 0, PI/2, 0]
+    destThetas = [PI/2, -1.2, -0.7, 0, PI/2, 0]
     ur3_utils.set_joint_position(destThetas, clientID, jointHandles)
     suction(0, clientID)
     ur3_utils.set_zero_config(clientID, jointHandles)
