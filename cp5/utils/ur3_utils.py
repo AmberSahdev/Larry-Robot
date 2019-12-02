@@ -56,6 +56,17 @@ def get_end_effector_handle(clientID):
 
 
 ####################### Functions to read UR3 metadata #######################
+# Function to get the location of the UR3 in the world frame
+def get_ur3_location(clientID):
+    result, UR3Handle = vrep.simxGetObjectHandle(clientID, 'UR3_link1_visible', vrep.simx_opmode_blocking)
+    result, floorHandle = vrep.simxGetObjectHandle(clientID, 'ResizableFloor_5_25', vrep.simx_opmode_blocking)
+
+    result, position = vrep.simxGetObjectPosition(clientID, UR3Handle, floorHandle, vrep.simx_opmode_streaming)
+    while position == [0, 0, 0]:
+        result, position = vrep.simxGetObjectPosition(clientID, UR3Handle, floorHandle, vrep.simx_opmode_streaming)
+
+    return position
+
 # Function used to move joints to desired angle theta
 def set_joint_position(theta, clientID, jointHandles):
 	[base_handle, joint_one_handle, joint_two_handle, joint_three_handle, joint_four_handle, joint_five_handle, joint_six_handle] = jointHandles
@@ -172,6 +183,12 @@ def UR3_inverse_kinematics(targetT, clientID, jointHandles):
 	    set_joint_position(np.array(targetThetaList), clientID, jointHandles)
 	# Reasons for not being succesful: either due to the method or due to physical constraints
 	return IKsuccess, targetThetaList
+
+# Turns the suction cup attached to the UR3 on or off 
+def suction(control, clientID):
+    # control = 0 == off
+    # control = 1 == on
+    vrep.simxSetIntegerSignal(clientID, 'BaxterVacuumCup_active', control, vrep.simx_opmode_oneshot)
 
 
 ########################## Helper Functions for UR3 ##########################

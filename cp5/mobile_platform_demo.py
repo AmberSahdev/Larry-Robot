@@ -11,7 +11,7 @@ import modern_robotics as mr
 PI = np.pi
 
 def get_cuboid_location(clientID):
-    result, cuboidObjHandle = vrep.simxGetObjectHandle(clientID, 'Cuboid0', vrep.simx_opmode_blocking)
+    result, cuboidObjHandle = vrep.simxGetObjectHandle(clientID, 'Cuboid', vrep.simx_opmode_blocking)
     result, floorHandle = vrep.simxGetObjectHandle(clientID, 'ResizableFloor_5_25', vrep.simx_opmode_blocking)
 
     result, position = vrep.simxGetObjectPosition(clientID, cuboidObjHandle, floorHandle, vrep.simx_opmode_streaming)
