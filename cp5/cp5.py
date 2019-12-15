@@ -1,3 +1,4 @@
+# Overall demo with mobile platform, end-effector, and inverse kinematics
 import vrep
 import time
 import numpy as np
@@ -7,7 +8,6 @@ import utils.math_utils as math_utils
 import utils.ur3_utils as ur3_utils
 import utils.vrep_utils as vrep_utils
 import utils.pioneer_p3dx_utils as pioneer_p3dx_utils
-import modern_robotics as mr
 import utils.utils as utils
 
 PI = np.pi

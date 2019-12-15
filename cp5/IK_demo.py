@@ -1,3 +1,4 @@
+# Demonstrates Inverse Kinematics on UR3
 import vrep
 import time
 import numpy as np
@@ -6,7 +7,6 @@ from scipy.linalg import expm,logm
 import utils.math_utils as math_utils
 import utils.ur3_utils as ur3_utils
 import utils.vrep_utils as vrep_utils
-import modern_robotics as mr
 
 PI = np.pi
 
