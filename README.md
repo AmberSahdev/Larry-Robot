@@ -45,3 +45,7 @@ Our method calculates the M and S matrices of the robot and then the transformat
 We also restructured our code into ur3_utils, vrep_utils, and math_utils to make interaction with the robot and the environment easier and much easier to collaborate on.  
 
 We hope to get perception and end-effector working by the next checkpoint.
+
+
+### Checkpoint 5
+At this point we have a robotic arm on a mobile base that, given a target, locomotes towards it, picks it up, and places the target object on a second specified position. The videos can be seen in the /videos/ directory and document our progress very well. Our choice of end-effector was a suction cup, our mobile base has two wheels. 
