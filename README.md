@@ -56,4 +56,3 @@ To run the code in this checkpoint open V-REP and load in the ur3.ttt scene in /
 ```
 python3 cp5.py
 ```
-The relevant remote API connection files are already in the cp5 directory.
