@@ -1,6 +1,8 @@
 # Larry-Robot
 ECE 470 Final Project
 
+![Robot](/overview.png)
+
 ### Checkpont 1
 For our final project, we intend to build a simulation of a robot to which a user can point out unknown objects to. The user can then point out a second location and the robot then picks the object up and drops it off at the new location.
 
@@ -34,7 +36,7 @@ We hope to get inverse kinematics and basic camera sensing working for the next 
 ### Checkpoint 4
 Video:  [Checkpoint 4](https://youtu.be/nPya1e8HnMI)
 
-To run the code in this checkpoint open V-REP and load in the ur3.ttt scene in /cp4/. Make sure V-REP can accept incoming connections and then type the following command in the terminal in project/cp3/
+To run the code in this checkpoint open V-REP and load in the ur3.ttt scene in /cp4/. Make sure V-REP can accept incoming connections and then type the following command in the terminal in project/cp4/
 ```
 python3 cp4.py
 ```
@@ -48,4 +50,10 @@ We hope to get perception and end-effector working by the next checkpoint.
 
 
 ### Checkpoint 5
-At this point we have a robotic arm on a mobile base that, given a target, locomotes towards it, picks it up, and places the target object on a second specified position. The videos can be seen in the /videos/ directory and document our progress very well. Our choice of end-effector was a suction cup, our mobile base has two wheels. 
+At this point we have a robotic arm on a mobile base that, given a target, locomotes towards it, picks it up, and places the target object on a second specified position. The videos can be seen in the /videos/ directory and document our progress very well. Our choice of end-effector was a suction cup, our mobile base has two wheels.
+
+To run the code in this checkpoint open V-REP and load in the ur3.ttt scene in /cp5/. Make sure V-REP can accept incoming connections and then type the following command in the terminal in project/cp5/
+```
+python3 cp5.py
+```
+The relevant remote API connection files are already in the cp5 directory.
