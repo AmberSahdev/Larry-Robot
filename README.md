@@ -1,7 +1,7 @@
 # Larry-Robot
 ECE 470 Final Project
 
-![Robot](/overview.png)
+![Robot](/images/overview.png)
 
 ### Checkpont 1
 For our final project, we intend to build a simulation of a robot to which a user can point out unknown objects to. The user can then point out a second location and the robot then picks the object up and drops it off at the new location.
@@ -56,3 +56,8 @@ To run the code in this checkpoint open V-REP and load in the ur3.ttt scene in /
 ```
 python3 cp5.py
 ```
+
+
+Start                          |          Pick Up              |          Drop Off
+:-------------------------:|:------------------------:|:-------------------------:
+![1](/images/overview.png) | ![2](/images/pickingup.png) | ![3](/images/droppingoff.png)
