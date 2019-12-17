@@ -61,3 +61,10 @@ python3 cp5.py
 Start                          |          Pick Up              |          Drop Off
 :-------------------------:|:------------------------:|:-------------------------:
 ![1](/images/overview.png) | ![2](/images/pickingup.png) | ![3](/images/droppingoff.png)
+
+
+### Future Features
+- [ ] Determining object location through computer vision
+- [ ] Path Planning
+- [ ] Collision Detection and Avoidance
+
