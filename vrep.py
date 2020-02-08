@@ -1,3 +1,4 @@
+# Borrowed from http://coecsl.ece.illinois.edu/ece470/ with permission
 import platform
 import struct
 import sys

@@ -93,8 +93,6 @@ def main():
     while distance_to_target(clientID) > alpha:
         move_pioneer_p3dx(clientID, velocity = -(distance_to_target(clientID) - alpha))
 
-    # time.sleep(3)
-
     ur3_utils.set_zero_config(clientID, jointHandles)
 
     originalThetas = [0, 1.4, 0.45, 0, -PI/2, 0]
@@ -105,15 +103,7 @@ def main():
     suction(0, clientID)
     ur3_utils.set_zero_config(clientID, jointHandles)
 
-    '''
-    print("> Inverse Kinematics")
-    targetT = get_target_T(clientID)
-    IKsuccess, calculatedThetaList = ur3_utils.UR3_inverse_kinematics(targetT, clientID, jointHandles)
-    if not IKsuccess:
-        print("\t Target position unreachable either due to current algorithm or due to physical constraints")
-    '''
     time.sleep(2)
-
 
     print("> Exiting Simulation")
     vrep_utils.end_simulation(clientID)

@@ -13,32 +13,7 @@ PI = np.pi
 # Get T transformation matrix of the object to be picked up
 # This is the end-effector position we are trying to reach
 def get_target_T(clientID, jointHandles):
-    # Dummy function for now
-    # This is how T was generated
-    '''
-    # list of angles that work:
-    # 1. [0.1, 1.2, 0.1, 0.1, 0, 0]
-    # 2. [0.1, -0.6, 0.1, 0.1, 0, 0]
-    # 3. [0.1, 0.6, 0.1, 0.1, 0, 0]
-    # 4. [0, PI/2, -0.5, 0, 0, 0]
-    # 5. [0, 1.2, -0.2, 1.2, 0, 0]
-    ur3_utils.set_joint_position(np.array([0, PI/2, -0.5, 0, 0, 0]), clientID, jointHandles)
-    jointDistances = ur3_utils.get_joint_distances(clientID, jointHandles)
-    T = np.eye(4)
-    R = np.eye(3)
-    p = np.array([jointDistances[0][-1], jointDistances[1][-1], jointDistances[2][-1]])
-    T[:3, :3] = R
-    T[:3, 3] = p
-    T[3, 3] = 1
-    print("\t Dest T: ", T)
-    '''
-    '''
-    # [0, 1.2, -0.2, 1.2, 0, 0]
-    T = np.array([[ 1,     0,     0,    -0.112], \
-                  [ 0,     1,     0,     0.476], \
-                  [ 0,     0,     1,     0.261], \
-                  [ 0,     0,     0,     1   ]], dtype=np.float32)
-    '''
+    # Dummy test function
     # [0, PI/2, -0.5, 0, 0, 0]
     T = np.array([[ 1. ,    0. ,    0.,    -0.112],
                   [ 0. ,    1. ,    0.,     0.506],
